@@ -246,9 +246,13 @@ body {
   }
 }
 
+
 body {
   letter-spacing: 0.01625rem;
+
 }
+
+
 
 h1,
 h2,
@@ -531,6 +535,14 @@ a.blog-read:hover {
   transition: 0.8s ease;
 }
 
+footer {
+  position: relative;
+  z-index: 1;
+  background-color: rgba(0,0,0,0.2);
+  color: white;
+  text-align: center;
+  padding: 1rem;
+}
 
 /* footer style */
 iconify-icon.social-icon {
