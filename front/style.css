@@ -14,6 +14,7 @@
 :root {
   --accent-color: #ffa500;
   --azul-color:#00ffff;
+  --rosa-color: #ff2fff;
   --dark-color: #222222;
   --light-dark-color: #727272;
   --light-color: #fff;
@@ -168,7 +169,10 @@ body {
   
 }
 
-
+.text-primary{
+  color: var(--accent-color) !important;
+  --bs-text-opacity: 1;
+}
  
 .background {
   position: fixed;
@@ -211,9 +215,14 @@ h4,
 h5,
 h6 {
   font-family: var(--heading-font);
-  color: var(--bs-body-color);
+  color: var(--azul-color);
   font-weight: 400;
   text-transform: none;
+}
+
+h3{
+  color: var(--rosa-color) !important;
+
 }
 
 a {
@@ -381,13 +390,17 @@ a.categories-item:hover iconify-icon.category-icon {
 
 a.btn-cart {
   border-radius: 0.25rem;
-  border: 1px solid rgba(65, 64, 62, 0.20);
+  border: 1px solid #00ffff;
 }
 
 a.btn-wishlist {
 
   border-radius: 0.25rem;
-  border: 1px solid rgba(65, 64, 62, 0.20);
+  border: 1px solid #00ffff;
+}
+
+a{
+  color: var(--rosa-color)
 }
 
 
@@ -470,7 +483,7 @@ iconify-icon.quote-icon {
 
 /* blog style */
 .blog-paragraph {
-  color: #908F8D;
+  color: var(--azul-color);
   font-size: 1rem;
   font-weight: 400;
   line-height: normal;
