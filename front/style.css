@@ -539,7 +539,9 @@ a.blog-read:hover {
   -webkit-transition: 0.8s ease;
   transition: 0.8s ease;
 }
-
+.registeer{
+  background-color: rgba(0, 0, 0, 0.2);
+}
 footer {
   position: relative;
   z-index: 1;
