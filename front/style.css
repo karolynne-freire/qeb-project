@@ -241,6 +241,7 @@ a {
 .secondary-font {
   font-family: var(--secondary-font);
   font-weight: 300;
+  color: var(--azul-color);
 }
 
 /*----------------------------------------------*/
@@ -570,8 +571,27 @@ iconify-icon.send-icon {
   padding: 0.75rem;
   border-radius: 4.375rem;
   color: #FFF;
-  border: 1px solid #DEAD6F;
-  background: #DEAD6F;
+  border: 1px solid #ffa500;
+  background: var(--azul-color);
+}
+.offcanvas-body{
+  background: linear-gradient(135deg, #0e2447, #000000);
+}
+
+.offcanvas-header{
+  background: linear-gradient(135deg, #0e2447, #000000);
+}
+.dropdown-item{
+  color: var(--azul-color);
+
+}
+
+.dropdown-menu.show{
+  background: linear-gradient(135deg, #0e2447, #000000);
+}
+
+.dropdown-item:hover{
+  color: var(--accent-color);
 }
 
 .btn-closee{
