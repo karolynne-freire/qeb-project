@@ -544,9 +544,11 @@ a.blog-read:hover {
   -webkit-transition: 0.8s ease;
   transition: 0.8s ease;
 }
-.registeer{
+
+.registeer {
   background-color: rgba(0, 0, 0, 0.2);
 }
+
 footer {
   position: relative;
   z-index: 1;
@@ -582,40 +584,44 @@ iconify-icon.send-icon {
   border: 1px solid #ffa500;
   background: var(--azul-color);
 }
-.offcanvas-body{
+
+.offcanvas-body {
   background: linear-gradient(135deg, #0e2447, #000000);
 }
 
-.offcanvas-header{
+.offcanvas-header {
   background: linear-gradient(135deg, #0e2447, #000000);
 }
-.dropdown-item{
+
+.dropdown-item {
   color: var(--azul-color);
 
 }
 
-.dropdown-menu.show{
+.dropdown-menu.show {
   background: linear-gradient(135deg, #0e2447, #000000);
 }
 
-.dropdown-item:hover{
+.dropdown-item:hover {
   color: var(--accent-color);
 }
 
-.btn-closee{
+.btn-closee {
   filter: brightness(0) invert(1);
 }
 
-#offcanvasCart{
+#offcanvasCart {
   background-color: #ff2fff4a;
 }
 
-.rounded-circle{
+.rounded-circle {
   background-color: #ff2fff !important;
 }
-.btn-lg{
+
+.btn-lg {
   background-color: #ffa500 !important;
 }
+
 @media screen and (max-width: 991px) {
 
   /* offcanvas menu */
@@ -748,5 +754,9 @@ Single Product section style start
   .swiper-container-custom {
     width: 100%;
   }
+}
 
+.icons-svg {
+  width: 14rem;
+  height: 14rem;
 }
