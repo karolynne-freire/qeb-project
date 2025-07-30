@@ -1,27 +1,27 @@
-(function($) {
+(function ($) {
 
   "use strict";
 
-  var initPreloader = function() {
-    $(document).ready(function($) {
-    var Body = $('body');
-        Body.addClass('preloader-site');
+  var initPreloader = function () {
+    $(document).ready(function ($) {
+      var Body = $('body');
+      Body.addClass('preloader-site');
     });
-    $(window).load(function() {
-        $('.preloader-wrapper').fadeOut();
-        $('body').removeClass('preloader-site');
+    $(window).load(function () {
+      $('.preloader-wrapper').fadeOut();
+      $('body').removeClass('preloader-site');
     });
   }
 
   // init Chocolat light box
-	var initChocolat = function() {
-		Chocolat(document.querySelectorAll('.image-link'), {
-		  imageSize: 'contain',
-		  loop: true,
-		})
-	}
+  var initChocolat = function () {
+    Chocolat(document.querySelectorAll('.image-link'), {
+      imageSize: 'contain',
+      loop: true,
+    })
+  }
 
-  var initSwiper = function() {
+  var initSwiper = function () {
 
     var swiper = new Swiper(".main-swiper", {
       speed: 500,
@@ -38,6 +38,9 @@
       breakpoints: {
         0: {
           slidesPerView: 1,
+        },
+        576: {
+          slidesPerView: 2,
         },
         768: {
           slidesPerView: 3,
@@ -61,9 +64,13 @@
       slidesPerView: 4,
       spaceBetween: 30,
       speed: 500,
+      // determina a quantidade de itens a ser exibidos no carrossel
       breakpoints: {
         0: {
           slidesPerView: 1,
+        },
+        576: {
+          slidesPerView: 2,
         },
         768: {
           slidesPerView: 3,
@@ -71,31 +78,77 @@
         991: {
           slidesPerView: 4,
         },
-
       }
     });
 
+    var eventos_swiper = new Swiper(".eventos-swiper", {
+      slidesPerView: 3,
+      spaceBetween: 30,
+      speed: 500,
+      // determina a quantidade de itens a ser exibidos no carrossel
+      breakpoints: {
+        0: {
+          slidesPerView: 2,
+        },
+        480: {
+          slidesPerView: 2,
+        },
+        576: {
+          slidesPerView: 3,
+        },
+        768: {
+          slidesPerView: 3,
+        },
+        991: {
+          slidesPerView: 4,
+        },
+      }
+    });
+
+    var eventos_cards_swiper = new Swiper(".eventos-cards-swiper", {
+      slidesPerView: 3,
+      spaceBetween: 30,
+      speed: 500,
+      // determina a quantidade de itens a ser exibidos no carrossel
+      breakpoints: {
+        0: {
+          slidesPerView: 2,
+        },
+        480: {
+          slidesPerView: 2,
+        },
+        576: {
+          slidesPerView: 3,
+        },
+        768: {
+          slidesPerView: 3,
+        },
+        991: {
+          slidesPerView: 4,
+        },
+      }
+    });
   }
 
-  var initProductQty = function(){
+  var initProductQty = function () {
 
-    $('.product-qty').each(function(){
+    $('.product-qty').each(function () {
 
       var $el_product = $(this);
       var quantity = 0;
 
-      $el_product.find('.quantity-right-plus').click(function(e){
-          e.preventDefault();
-          var quantity = parseInt($el_product.find('#quantity').val());
-          $el_product.find('#quantity').val(quantity + 1);
+      $el_product.find('.quantity-right-plus').click(function (e) {
+        e.preventDefault();
+        var quantity = parseInt($el_product.find('#quantity').val());
+        $el_product.find('#quantity').val(quantity + 1);
       });
 
-      $el_product.find('.quantity-left-minus').click(function(e){
-          e.preventDefault();
-          var quantity = parseInt($el_product.find('#quantity').val());
-          if(quantity>0){
-            $el_product.find('#quantity').val(quantity - 1);
-          }
+      $el_product.find('.quantity-left-minus').click(function (e) {
+        e.preventDefault();
+        var quantity = parseInt($el_product.find('#quantity').val());
+        if (quantity > 0) {
+          $el_product.find('#quantity').val(quantity - 1);
+        }
       });
 
     });
@@ -103,7 +156,7 @@
   }
 
   // init jarallax parallax
-  var initJarallax = function() {
+  var initJarallax = function () {
     jarallax(document.querySelectorAll(".jarallax"));
 
     jarallax(document.querySelectorAll(".jarallax-keep-img"), {
@@ -112,30 +165,30 @@
   }
 
   // document ready
-  $(document).ready(function() {
-    
+  $(document).ready(function () {
+
     initPreloader();
     initSwiper();
     initProductQty();
     initJarallax();
     initChocolat();
 
-        // product single page
-        var thumb_slider = new Swiper(".product-thumbnail-slider", {
-          spaceBetween: 8,
-          slidesPerView: 3,
-          freeMode: true,
-          watchSlidesProgress: true,
-        });
-    
-        var large_slider = new Swiper(".product-large-slider", {
-          spaceBetween: 10,
-          slidesPerView: 1,
-          effect: 'fade',
-          thumbs: {
-            swiper: thumb_slider,
-          },
-        });
+    // product single page
+    var thumb_slider = new Swiper(".product-thumbnail-slider", {
+      spaceBetween: 8,
+      slidesPerView: 3,
+      freeMode: true,
+      watchSlidesProgress: true,
+    });
+
+    var large_slider = new Swiper(".product-large-slider", {
+      spaceBetween: 10,
+      slidesPerView: 1,
+      effect: 'fade',
+      thumbs: {
+        swiper: thumb_slider,
+      },
+    });
 
     window.addEventListener("load", (event) => {
       //isotope
