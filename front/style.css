@@ -558,6 +558,11 @@ footer {
   padding: 1rem;
 }
 
+.footer-menu img{
+  width: 90px;
+
+}
+
 /* footer style */
 iconify-icon.social-icon {
   color: #CACACA;
