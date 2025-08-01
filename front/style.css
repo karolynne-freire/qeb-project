@@ -111,7 +111,7 @@ body {
   --bs-btn-color: #00ffff;
   --bs-btn-border-color: #00ffff;
   --bs-btn-hover-color: #fff;
-  --bs-btn-hover-bg: #00ffff;
+  --bs-btn-hover-bg: #00ffffa9;
   --bs-btn-hover-border-color: #00ffff;
   --bs-btn-focus-shadow-rgb: 33, 37, 41;
   --bs-btn-active-color: #fff;
@@ -623,9 +623,6 @@ iconify-icon.send-icon {
   background-color: #ff2fff !important;
 }
 
-.btn-lg {
-  background-color: #ffa500 !important;
-}
 
 @media screen and (max-width: 991px) {
 
