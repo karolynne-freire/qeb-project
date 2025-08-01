@@ -1,101 +1,8 @@
-/*
-Theme Name: Waggy
-Theme URI: https://templatesjungle.com/
-Author: TemplatesJungle
-Author URI: https://templatesjungle.com/
-Description: Waggy is specially designed product packaged for eCommerce pet store websites.
-Version: 1.1
-*/
-
-/*--------------------------------------------------------------
-This is main CSS file that contains custom style rules used in this template
---------------------------------------------------------------*/
-
-/*------------------------------------*\
-    Table of contents
-\*------------------------------------*/
-
-/*------------------------------------------------
-
-CSS STRUCTURE:
-
-1. VARIABLES
-
-2. GENERAL TYPOGRAPHY
-  2.1 General Styles
-  2.2 Floating & Alignment
-  2.3 Forms
-  2.4 Lists
-  2.5 Code
-  2.6 Tables
-  2.7 Spacing
-  2.8 Utilities
-  2.9 Misc
-    - Row Border
-    - Zoom Effect
-  2.10 Buttons
-    - Button Sizes
-    - Button Shapes
-    - Button Color Scheme
-    - Button Aligns
-  2.11 Section
-    - Hero Section
-    - Section Title
-    - Section Paddings
-    - Section Margins
-    - Section Bg Colors
-    - Content Colors
-    - Content Borders
-
-3. EXTENDED TYPOGRAPHY
-  3.1 Blockquote / Pullquote
-  3.2 Text Highlights
-
-4. CONTENT ELEMENTS
-  4.1 Tabs
-  4.2 Accordions
-  4.3 Brand Carousel
-  4.4 Category Carousel
-
-5. BLOG STYLES
-  5.1 Blog Single Post
-  5.2 About Author
-  5.3 Comments List
-  5.4 Comments Form3
-
-6. SITE STRUCTURE
-  6.1 Header
-    - Header Menu
-    - Nav Sidebar
-  6.2 Billboard
-  6.3 About Us Section
-  6.4 Video Section
-  6.5 Selling Products Section
-  6.6 Quotation Section
-  6.7 Latest Blogs Section
-  6.8 Newsletter Section
-  6.9 Instagram Section
-  6.10 Footer
-    - Footer Top
-    - Footer Bottom
-
-7. OTHER PAGES
-  7.1 Product detail
-  7.2 Shop page
-
-    
-/*--------------------------------------------------------------
-/** 1. VARIABLES
---------------------------------------------------------------*/
 :root {
-  /* widths for rows and containers
-     */
   --header-height: 160px;
   --header-height-min: 80px;
 }
 
-/* on mobile devices below 600px
- */
 @media screen and (max-width: 600px) {
   :root {
     --header-height: 100px;
@@ -105,7 +12,9 @@ CSS STRUCTURE:
 
 /* Theme Colors */
 :root {
-  --accent-color: #DEAD6F;
+  --accent-color: #ffa500;
+  --azul-color: #00ffff;
+  --rosa-color: #ff2fff;
   --dark-color: #222222;
   --light-dark-color: #727272;
   --light-color: #fff;
@@ -199,19 +108,19 @@ body {
   padding: 1.2rem 3rem;
   letter-spacing: 0.02375rem;
   text-transform: uppercase;
-  --bs-btn-color: #41403E;
-  --bs-btn-border-color: #41403E;
+  --bs-btn-color: #00ffff;
+  --bs-btn-border-color: #00ffff;
   --bs-btn-hover-color: #fff;
-  --bs-btn-hover-bg: #41403E;
-  --bs-btn-hover-border-color: #41403E;
+  --bs-btn-hover-bg: #00ffffa9;
+  --bs-btn-hover-border-color: #00ffff;
   --bs-btn-focus-shadow-rgb: 33, 37, 41;
   --bs-btn-active-color: #fff;
-  --bs-btn-active-bg: #41403E;
-  --bs-btn-active-border-color: #41403E;
+  --bs-btn-active-bg: #00ffff;
+  --bs-btn-active-border-color: #00ffff;
   --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
-  --bs-btn-disabled-color: #41403E;
+  --bs-btn-disabled-color: #00ffff;
   --bs-btn-disabled-bg: transparent;
-  --bs-btn-disabled-border-color: #41403E;
+  --bs-btn-disabled-border-color: #00ffff;
   --bs-gradient: none;
 }
 
@@ -246,8 +155,61 @@ body {
   }
 }
 
+
 body {
   letter-spacing: 0.01625rem;
+
+
+}
+
+.html,
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+  scroll-behavior: smooth;
+}
+
+.text-primary {
+  color: var(--accent-color) !important;
+  --bs-text-opacity: 1;
+}
+
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background: linear-gradient(135deg, #0e2447, #000000);
+  overflow: hidden;
+  pointer-events: none;
+}
+
+
+.star {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  background: white;
+  border-radius: 50%;
+  opacity: 0.7;
+  animation: twinkle 2s infinite ease-in-out;
+}
+
+@keyframes twinkle {
+
+  0%,
+  100% {
+    opacity: 0.2;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.5);
+  }
 }
 
 h1,
@@ -257,9 +219,14 @@ h4,
 h5,
 h6 {
   font-family: var(--heading-font);
-  color: var(--bs-body-color);
+  color: var(--azul-color);
   font-weight: 400;
-  text-transform: capitalize;
+  text-transform: none;
+}
+
+h3 {
+  color: var(--rosa-color) !important;
+
 }
 
 a {
@@ -278,6 +245,7 @@ a {
 .secondary-font {
   font-family: var(--secondary-font);
   font-weight: 300;
+  color: var(--azul-color);
 }
 
 /*----------------------------------------------*/
@@ -294,7 +262,7 @@ a {
   top: 0;
   left: 0;
   z-index: 111;
-  background: #fff;
+  background: linear-gradient(135deg, #0e2447, #000000);
 }
 
 .preloader-wrapper .preloader {
@@ -364,11 +332,23 @@ a {
 
 
 /* nav bar style  */
-.navbar-nav .nav-link.active,
-.navbar-nav .nav-link.show,
-.nav-link:focus,
+
+.navbar-nav .nav-link.active {
+  color: var(--accent-color);
+}
+
+.nav-link {
+  color: var(--azul-color);
+
+}
+
 .nav-link:hover {
   color: var(--accent-color);
+}
+
+.color-icon {
+  color: var(--azul-color);
+  ;
 }
 
 /* category style */
@@ -380,7 +360,7 @@ iconify-icon.category-icon {
 }
 
 a.categories-item:hover iconify-icon.category-icon {
-  color: #DEAD6F;
+  color: #6fc8de;
 }
 
 
@@ -415,13 +395,17 @@ a.categories-item:hover iconify-icon.category-icon {
 
 a.btn-cart {
   border-radius: 0.25rem;
-  border: 1px solid rgba(65, 64, 62, 0.20);
+  border: 1px solid #00ffff;
 }
 
 a.btn-wishlist {
 
   border-radius: 0.25rem;
-  border: 1px solid rgba(65, 64, 62, 0.20);
+  border: 1px solid #00ffff;
+}
+
+a {
+  color: var(--rosa-color)
 }
 
 
@@ -429,7 +413,7 @@ a.btn-wishlist {
 button.filter-button {
   letter-spacing: 0.02125rem;
   border: none;
-  border-bottom: 2px solid #D9D9D8;
+  border-bottom: 2px solid #00ffff;
   background: transparent;
   text-transform: uppercase;
   font-size: 1.0625rem;
@@ -438,7 +422,37 @@ button.filter-button {
 
 button.filter-button.active,
 button.filter-button:hover {
-  border-bottom: 2px solid #DEAD6F;
+  border-bottom: 2px solid #ffa500;
+}
+
+.tam-foto {
+  width: 250px;
+  height: 210px;
+}
+
+.cor-texto:hover {
+  color: var(--accent-color);
+}
+
+.cor-main {
+  color: var(--accent-color);
+}
+
+.cor-secondary {
+  color: var(--azul-color);
+}
+
+.cor-secondary {
+  color: var(--azul-color);
+}
+
+.cor-pink {
+  color: #ff2fff;
+  ;
+}
+
+.texto-justificado {
+  text-align: justify;
 }
 
 /* testimonial style  */
@@ -457,7 +471,7 @@ iconify-icon.quote-icon {
   color: #908F8D;
   line-height: normal;
   letter-spacing: 0.02125rem;
-  text-transform: capitalize;
+  text-transform: none;
   border-radius: 0.25rem;
   border: 1px solid rgba(65, 64, 62, 0.20);
   background: #FFF;
@@ -475,7 +489,7 @@ iconify-icon.quote-icon {
 
 /* blog style */
 .blog-paragraph {
-  color: #908F8D;
+  color: var(--azul-color);
   font-size: 1rem;
   font-weight: 400;
   line-height: normal;
@@ -531,6 +545,23 @@ a.blog-read:hover {
   transition: 0.8s ease;
 }
 
+.registeer {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+footer {
+  position: relative;
+  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.2);
+  color: white;
+  text-align: center;
+  padding: 1rem;
+}
+
+.footer-menu img{
+  width: 90px;
+
+}
 
 /* footer style */
 iconify-icon.social-icon {
@@ -555,8 +586,41 @@ iconify-icon.send-icon {
   padding: 0.75rem;
   border-radius: 4.375rem;
   color: #FFF;
-  border: 1px solid #DEAD6F;
-  background: #DEAD6F;
+  border: 1px solid #ffa500;
+  background: var(--azul-color);
+}
+
+.offcanvas-body {
+  background: linear-gradient(135deg, #0e2447, #000000);
+}
+
+.offcanvas-header {
+  background: linear-gradient(135deg, #0e2447, #000000);
+}
+
+.dropdown-item {
+  color: var(--azul-color);
+
+}
+
+.dropdown-menu.show {
+  background: linear-gradient(135deg, #0e2447, #000000);
+}
+
+.dropdown-item:hover {
+  color: var(--accent-color);
+}
+
+.btn-closee {
+  filter: brightness(0) invert(1);
+}
+
+#offcanvasCart {
+  background-color: #ff2fff4a;
+}
+
+.rounded-circle {
+  background-color: #ff2fff !important;
 }
 
 
@@ -673,4 +737,28 @@ Single Product section style start
 .nav-pills .show>.nav-link {
   color: var(--light-color);
   background-color: var(--accent-color);
+}
+
+.eventos-swiper {
+  overflow: hidden;
+}
+
+.swiper-slide {
+  width: auto;
+}
+
+.swiper-container-custom {
+  padding: 20px;
+  width: 60%;
+}
+
+@media screen and (max-width: 991px) {
+  .swiper-container-custom {
+    width: 100%;
+  }
+}
+
+.icons-svg {
+  width: 14rem;
+  height: 14rem;
 }
